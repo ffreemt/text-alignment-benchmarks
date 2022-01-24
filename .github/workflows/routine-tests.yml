@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [3.7, 3.8]
+        python-version: [3.8]
         poetry-version: [1.1.2]
         os: [ubuntu-18.04, macos-latest, windows-latest]
     runs-on: ${{ matrix.os }}
@@ -27,4 +27,4 @@ jobs:
           poetry run flake8 --exit-zero
           # poetry run pytest
       - name: Run pytest
-        run: poetry run pytest
+        run: poetry run pytest tests

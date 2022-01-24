@@ -24,6 +24,7 @@ def twotuple_metric(vec1: Tuple[int, int], vec2: Tuple[int, int]) -> float:
 
     >>> twotuple_metric([0, 1], [1, 2])
     0.0
+
     return 1. * float(vec1[0] == vec2[0] and vec1[1] == vec2[1]) or 0.5 * float(vec1[0] == vec2[0] or vec1[1] == vec2[1])
     """
     # if vec1 == vec2:
