@@ -1,0 +1,27 @@
+{
+    "name": "al_benchmark",
+    "version": "0.1.0",
+    "description": "description",
+    "main": "index.js",
+    "repository": "git@github.com:ffreemt/text-alignment-benchmarks.git",
+    "author": "ffreemt",
+    "license": "MIT",
+    "dependencies": {
+        "npm-run-all": "^4.1.5"
+    },
+    "scripts": {
+        "start": "pyright && pytest && yarn style",
+        "test": "nodemon -w tests -w al_benchmark -x pytest tests",
+        "pyright": "nodemon -w al_benchmark -w .venv -e .py -x pyright al_benchmark tests",
+        "pytest": "nodemon -w tests -w al_benchmark -e .py -x pytest tests al_benchmark",
+        "style": "nodemon -w al_benchmark -w tests -x \"black tests al_benchmark && python -m flake8\"",
+        "docstyle": "nodemon -w al_benchmark -w tests -x pydocstyle --convention=google tests al_benchmark",
+        "pylint": "nodemon -w al_benchmark -e .py -x pylint al_benchmark",
+        "test:al_benchmark": "nodemon -w tests -e .py -x pytest -k al_benchmark tests",
+        "publish": "poetry build && poetry publish",
+        "black": "black tests al_benchmark",
+        "flake8": "flake8 tests al_benchmark",
+        "pep257": "pep257 tests al_benchmark",
+        "final": "run-s pep257 black flake8 pytest"
+    }
+}

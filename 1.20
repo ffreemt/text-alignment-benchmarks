@@ -1,0 +1,25 @@
+Using version [1m^1.4.0[0m for [36mpandas[0m
+Using version [1m^1.22.1[0m for [36mnumpy[0m
+
+[34mUpdating dependencies[0m
+
+  [31;1mSolverProblemError[0m
+
+  [1mThe current project's Python requirement (3.7.9) is not compatible with some of the required packages Python requirement:
+    - numpy requires Python >=3.8, so it will not be satisfied for Python 3.7.9
+  
+  Because numpy (1.22.1) requires Python >=3.8
+   and no versions of numpy match >1.22.1,<2.0.0, numpy is forbidden.
+  So, because al-benchmark depends on numpy (^1.22.1), version solving failed.[0m
+
+  at [32m~\AppData\Roaming\pypoetry\venv\lib\site-packages\poetry\puzzle\solver.py[0m:[1m241[0m in [36m_solve[0m
+      [39;2m237[0m[39;2m©¦[0m [39m            packages [0m[39;2m= [0m[39mresult[0m[39;2m.[0m[39mpackages[0m
+      [39;2m238[0m[39;2m©¦[0m [39m        [0m[35;1mexcept [0m[39mOverrideNeeded [0m[35;1mas [0m[39me[0m[39;2m:[0m
+      [39;2m239[0m[39;2m©¦[0m [39m            [0m[35;1mreturn [0m[39;1mself[0m[39;2m.[0m[39msolve_in_compatibility_mode[0m[39;2m([0m[39me[0m[39;2m.[0m[39moverrides[0m[39;2m, [0m[39muse_latest[0m[39;2m=[0m[39muse_latest[0m[39;2m)[0m
+      [39;2m240[0m[39;2m©¦[0m [39;2m        [0m[35;1mexcept [0m[39mSolveFailure [0m[35;1mas [0m[39me[0m[39;2m:[0m
+    [31;1m¡ú[0m [39;1m241[0m[39;2m©¦[0m [39m            [0m[35;1mraise [0m[39mSolverProblemError[0m[39;2m([0m[39me[0m[39;2m)[0m
+      [39;2m242[0m[39;2m©¦[0m 
+      [39;2m243[0m[39;2m©¦[0m [39m        results [0m[39;2m= [0m[39;1mdict[0m[39;2m([0m
+      [39;2m244[0m[39;2m©¦[0m [39m            depth_first_search[0m[39;2m([0m
+      [39;2m245[0m[39;2m©¦[0m [39m                PackageNode[0m[39;2m([0m[39;1mself[0m[39;2m.[0m[39m_package[0m[39;2m, [0m[39mpackages[0m[39;2m), [0m[39maggregate_package_nodes[0m
+
