@@ -1,5 +1,5 @@
 """Bootstrap."""
-from al_benchmark.benchmark import benchmark
+from align_benchmark.benchmark import benchmark
 
 
 def main():

@@ -8,7 +8,7 @@ from itertools import zip_longest
 import numpy as np
 import pandas as pd
 
-from al_benchmark.twotuple_metric import twotuple_metric
+from align_benchmark.twotuple_metric import twotuple_metric
 
 file_loc = "data/para-wh-ch1-benchmark1.xlsx"
 if not Path(file_loc).exists():

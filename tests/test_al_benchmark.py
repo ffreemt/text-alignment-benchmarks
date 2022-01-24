@@ -1,6 +1,6 @@
-"""Test al_benchmark."""
-from al_benchmark import __version__
-from al_benchmark import al_benchmark
+"""Test align_benchmark."""
+from align_benchmark import __version__
+from align_benchmark import align_benchmark
 
 
 def test_version():
@@ -11,6 +11,6 @@ def test_version():
 def test_sanity():
     """Sanity check."""
     try:
-        assert not al_benchmark()
+        assert not align_benchmark()
     except Exception:
         assert True
