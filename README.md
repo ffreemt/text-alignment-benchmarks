@@ -23,3 +23,10 @@ from align_benchmark.benchmark import benchmark
 benchmark()
 
 ```
+or from command line
+```shell
+align-benchmark
+
+# or python -m align_benchmark
+```
+
