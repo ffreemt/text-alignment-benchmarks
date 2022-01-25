@@ -29,10 +29,15 @@ def twotuple_metric(vec1: Tuple[int, int], vec2: Tuple[int, int]) -> float:
     """
     # if vec1 == vec2:
     if vec1[0] == vec2[0] and vec1[1] == vec2[1]:
-        return 1.
+        return 1.0
 
     # if vec1[0] == vec2[0] or vec1[1] == vec2[1]:
-    if vec1[0] == vec2[0] and abs(vec1[1] - vec2[1]) <= 1 or vec1[1] == vec2[1] and abs(vec1[0] - vec2[0]) <= 1:
+    if (
+        vec1[0] == vec2[0]
+        and abs(vec1[1] - vec2[1]) <= 1
+        or vec1[1] == vec2[1]
+        and abs(vec1[0] - vec2[0]) <= 1
+    ):
         return 0.5
 
-    return 0.
+    return 0.0

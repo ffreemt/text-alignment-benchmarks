@@ -10,7 +10,8 @@ import pandas as pd
 
 from align_benchmark.twotuple_metric import twotuple_metric
 
-file_loc = "data/para-wh-ch1-benchmark1.xlsx"
+# wh ch2, bm1, 33,36
+file_loc = "data/para-wh-ch2-benchmark1.xlsx"
 if not Path(file_loc).exists():
     raise SystemExit(f"File [{file_loc}] does not exist.")
 
@@ -18,10 +19,20 @@ _ = pd.read_excel(file_loc, header=0)[["Unnamed: 1", "Unnamed: 3"]]
 _.columns = ["list1", "list2"]
 bm1 = _.to_numpy().tolist()
 
+# wh ch1, bm2, 35,33
+# no header, take 0, 2 cols, dropna how='all', fillna, method='ffill'
+bm2 = (
+    pd.read_excel("data/para-wh-ch1-benchmark2.xlsx", header=None)[[0, 2]]
+    .dropna(how="all")
+    .fillna(method="ffill")
+    .to_numpy(dtype="int")
+    .tolist()
+)
+
 
 def benchmark(
     lst_: Optional[List[Union[Tuple[int, int], List[int]]]] = None,
-    bench: List[Union[Tuple[int, int], List[int]]] = bm1
+    bench: List[Union[Tuple[int, int], List[int]]] = bm1,
 ) -> float:
     """Bnechmark para wh-ch1.
 
