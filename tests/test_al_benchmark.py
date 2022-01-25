@@ -5,7 +5,7 @@ from align_benchmark import align_benchmark
 
 def test_version():
     """Test version."""
-    assert __version__ == "0.1.0"
+    assert __version__ == "0.1.1"
 
 
 def test_sanity():

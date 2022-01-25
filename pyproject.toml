@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "align-benchmark"
-version = "0.1.0"
+version = "0.1.1"
 description = "Benchmark tests for dualtext alignment"
 authors = ["ffreemt"]
 license = "MIT"

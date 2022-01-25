@@ -48,9 +48,10 @@ def benchmark(
 
     Args:
         lst_: List of two-tuples of integers
+        bench: manually created list of two-tuples
 
-    Return
-        benchmark score between 0 and 1, 1 being the best.
+    Return:
+        a benchmark score between 0 and 1, 1 being the best.
 
     from itertools import zip_longest
     lst = [*zip_longest(range(33), range(36), fillvalue=32)]

@@ -9,7 +9,7 @@ from align_benchmark.benchmark import bm3
 
 
 def main():
-
+    """Create __main__."""
     # bm1
 
     res = round(benchmark(), 2)  # default to bm1
@@ -54,8 +54,8 @@ def main():
     try:
         int(left)
         int(right)
-    except ValueError:
-        raise SystemExit(" Not able to continue... likely ill-formatted data.")
+    except ValueError as exc:
+        raise SystemExit(" Unable to continue... likely ill-formatted data.") from exc
 
     fillvalue = ""
     lst = [
@@ -68,7 +68,7 @@ def main():
 
     res = round(benchmark(lst, bm3), 2)
 
-    print(" bm3 nkt-article ".center(40))
+    print(" bm3 nyt-article ".center(40))
     print("benchmark:".ljust(16), "\n".join(wrap(str(bm3), subsequent_indent=indent)))
     print("zip_longest:".ljust(16), "\n".join(wrap(str(lst), subsequent_indent=indent)))
     ic(res)
