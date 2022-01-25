@@ -29,6 +29,16 @@ bm2 = (
     .tolist()
 )
 
+bm3 = (
+    pd.read_excel("data/para-nyt-article-benchmark3.xlsx", header=None)[[0, 2]]
+    .dropna(how="all")
+    # .fillna(method="ffill")
+    # .to_numpy(dtype="int")
+    .fillna(value="")
+    .to_numpy()
+    .tolist()
+)
+
 
 def benchmark(
     lst_: Optional[List[Union[Tuple[int, int], List[int]]]] = None,

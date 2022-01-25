@@ -5,6 +5,7 @@ from icecream import ic
 
 from align_benchmark.benchmark import benchmark
 from align_benchmark.benchmark import bm2
+from align_benchmark.benchmark import bm3
 
 
 def main():
@@ -39,8 +40,36 @@ def main():
     ]
 
     res = round(benchmark(lst, bm2), 2)
+
     print(" bm2 wh ch1 ".center(40))
     print("benchmark:".ljust(16), "\n".join(wrap(str(bm2), subsequent_indent=indent)))
+    print("zip_longest:".ljust(16), "\n".join(wrap(str(lst), subsequent_indent=indent)))
+    ic(res)
+
+    # bm3
+    left, right = [*zip(*bm3)]
+    left = [elm for elm in left if str(elm).strip()][-1]
+    right = [elm for elm in right if str(elm).strip()][-1]
+
+    try:
+        int(left)
+        int(right)
+    except ValueError:
+        raise SystemExit(" Not able to continue... likely ill-formatted data.")
+
+    fillvalue = ""
+    lst = [
+        *zip_longest(
+            range(left + 1),
+            range(right + 1),
+            fillvalue=fillvalue,
+        )
+    ]
+
+    res = round(benchmark(lst, bm3), 2)
+
+    print(" bm3 nkt-article ".center(40))
+    print("benchmark:".ljust(16), "\n".join(wrap(str(bm3), subsequent_indent=indent)))
     print("zip_longest:".ljust(16), "\n".join(wrap(str(lst), subsequent_indent=indent)))
     ic(res)
 
