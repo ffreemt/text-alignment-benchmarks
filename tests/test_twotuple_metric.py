@@ -9,7 +9,7 @@ import pandas as pd
 from align_benchmark.twotuple_metric import twotuple_metric
 
 
-file_loc = "data/para-wh-ch1-benchmark1.xlsx"
+file_loc = "data/para-wh-ch2-benchmark1.xlsx"
 if not Path(file_loc).exists():
     raise SystemExit(f"File [{file_loc}] does not exist.")
 
